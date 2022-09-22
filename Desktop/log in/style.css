@@ -1,0 +1,80 @@
+html, body, .container {height: 100%; margin: 0;}
+
+header { grid-area: header; }
+#content { grid-area: main; }
+footer { grid-area: footer; }
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 90px auto 64px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+    background-color: skyblue;
+    color: white;
+	text-align: center;
+
+}
+
+#content .welcome{
+    background-color: #DDDDDD;
+    text-align: center;
+}
+
+.username { grid-area: username; }
+.password { grid-area: password; }
+.button { grid-area: button; }
+
+#content .login{
+    display: flex;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto 210px auto;
+    grid-template-areas: 
+                ". username username ."
+                ". password password ."
+                ". button button .";
+    background-color: white;
+    flex-direction: column;  
+}
+
+input[type=text]{
+    background-color: #DDDDDD; 
+    border-radius: 4px;
+}
+
+input[type=password]{
+    background-color: #DDDDDD; 
+    border-radius: 3px;
+}
+#content .login .button, #button{
+    padding: 13px 100px;
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+#content .login .username div  {
+    width: 50%;
+}
+
+#content .login .username, #username {
+    padding: 13px 39%;
+    border: 0px solid white;
+}
+
+#content .login .password, #password {
+    padding: 13px 39%;
+    border: 0px solid white;
+}
+
+
+footer {
+    background-color: skyblue;
+    color: white;
+	text-align: center;
+}
